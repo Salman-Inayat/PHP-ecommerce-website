@@ -977,7 +977,7 @@ a {
   border-right: 1px solid #e2e2e2;
 }
 .top-bar .cnt-account ul > li a {
-  color: #888888;
+  color: #ffffff;
   padding: 0px;
   font-weight: 400;
   -webkit-transition: all 0.2s linear 0s;
@@ -4749,7 +4749,7 @@ a {
 }
 .shopping-cart .shopping-cart-table table tbody tr .romove-item a:hover,
 .shopping-cart .shopping-cart-table table tbody tr .romove-item a:focus {
-  color: #ff000 !important;
+  color: #fff000 !important;
 }
 .shopping-cart .shopping-cart-table table tbody tr .cart-image .entry-thumbnail {
   display: block;

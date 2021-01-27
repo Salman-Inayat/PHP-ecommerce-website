@@ -131,13 +131,9 @@ while($row=mysqli_fetch_array($query))
                                             </td>
                                         </tr>
                                         <?php $cnt=$cnt+1; } ?>
-
                                 </table>
                             </div>
                         </div>
-
-
-
                     </div>
                     <!--/.content-->
                 </div>

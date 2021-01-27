@@ -177,8 +177,8 @@ if(!empty($_SESSION['cart'])){
                                                     value="<?php echo htmlentities($row['id']);?>" /></td>
                                             <td class="cart-image">
                                                 <a class="entry-thumbnail" href="detail.html">
-                                                    <img src="<?php echo $row['productImage1'];?>"
-                                                        alt="" width="114" height="146">
+                                                    <img src="<?php echo $row['productImage1'];?>" alt="" width="114"
+                                                        height="146">
                                                 </a>
                                             </td>
                                             <td class="cart-product-name-info">
@@ -234,165 +234,164 @@ $_SESSION['pid']=$pdtid;
 
                                     </tbody><!-- /tbody -->
                                 </table><!-- /table -->
-
-                        </div>
-                    </div><!-- /.shopping-cart-table -->
-                    <div class="col-md-4 col-sm-12 estimate-ship-tax">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span class="estimate-title">Billing Address</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-group">
-                                            <?php
+</form>
+                    </div>
+                </div><!-- /.shopping-cart-table -->
+                <div class="col-md-4 col-sm-12 estimate-ship-tax">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span class="estimate-title">Billing Address</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <?php
 $query=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
 while($row=mysqli_fetch_array($query))
 {
 ?>
 
-                                            <div class="form-group">
-                                                <label class="info-title" for="Billing Address">Billing
-                                                    Address<span>*</span></label>
-                                                <textarea class="form-control unicase-form-control text-input"
-                                                    name="billingaddress"
-                                                    required="required"><?php echo $row['billingAddress'];?></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="info-title" for="Billing State ">Billing State
-                                                    <span>*</span></label>
-                                                <input type="text" class="form-control unicase-form-control text-input"
-                                                    id="bilingstate" name="bilingstate"
-                                                    value="<?php echo $row['billingState'];?>" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="info-title" for="Billing City">Billing City
-                                                    <span>*</span></label>
-                                                <input type="text" class="form-control unicase-form-control text-input"
-                                                    id="billingcity" name="billingcity" required="required"
-                                                    value="<?php echo $row['billingCity'];?>">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="info-title" for="Billing Pincode">Billing Pincode
-                                                    <span>*</span></label>
-                                                <input type="text" class="form-control unicase-form-control text-input"
-                                                    id="billingpincode" name="billingpincode" required="required"
-                                                    value="<?php echo $row['billingPincode'];?>">
-                                            </div>
-                                            <button type="submit" name="update"
-                                                class="btn-upper btn btn-primary checkout-page-button">Update</button>
-
-                                            <?php } ?>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody><!-- /tbody -->
-                        </table><!-- /table -->
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 estimate-ship-tax">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <span class="estimate-title">Shipping Address</span>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
                                         <div class="form-group">
-                                            <?php
+                                            <label class="info-title" for="Billing Address">Billing
+                                                Address<span>*</span></label>
+                                            <textarea class="form-control unicase-form-control text-input"
+                                                name="billingaddress"
+                                                required="required"><?php echo $row['billingAddress'];?></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="info-title" for="Billing State ">Billing State
+                                                <span>*</span></label>
+                                            <input type="text" class="form-control unicase-form-control text-input"
+                                                id="bilingstate" name="bilingstate"
+                                                value="<?php echo $row['billingState'];?>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="info-title" for="Billing City">Billing City
+                                                <span>*</span></label>
+                                            <input type="text" class="form-control unicase-form-control text-input"
+                                                id="billingcity" name="billingcity" required="required"
+                                                value="<?php echo $row['billingCity'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="info-title" for="Billing Pincode">Billing Pincode
+                                                <span>*</span></label>
+                                            <input type="text" class="form-control unicase-form-control text-input"
+                                                id="billingpincode" name="billingpincode" required="required"
+                                                value="<?php echo $row['billingPincode'];?>">
+                                        </div>
+                                        <button type="submit" name="update"
+                                            class="btn-upper btn btn-primary checkout-page-button">Update</button>
+
+                                        <?php } ?>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody><!-- /tbody -->
+                    </table><!-- /table -->
+                </div>
+
+                <div class="col-md-4 col-sm-12 estimate-ship-tax">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span class="estimate-title">Shipping Address</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        <?php
 $query=mysqli_query($con,"select * from users where id='".$_SESSION['id']."'");
 while($row=mysqli_fetch_array($query))
 {
 ?>
 
-                                            <div class="form-group">
-                                                <label class="info-title" for="Shipping Address">Shipping
-                                                    Address<span>*</span></label>
-                                                <textarea class="form-control unicase-form-control text-input"
-                                                    name="shippingaddress"
-                                                    required="required"><?php echo $row['shippingAddress'];?></textarea>
-                                            </div>
-
-
-
-                                            <div class="form-group">
-                                                <label class="info-title" for="Billing State ">Shipping State
-                                                    <span>*</span></label>
-                                                <input type="text" class="form-control unicase-form-control text-input"
-                                                    id="shippingstate" name="shippingstate"
-                                                    value="<?php echo $row['shippingState'];?>" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="info-title" for="Billing City">Shipping City
-                                                    <span>*</span></label>
-                                                <input type="text" class="form-control unicase-form-control text-input"
-                                                    id="shippingcity" name="shippingcity" required="required"
-                                                    value="<?php echo $row['shippingCity'];?>">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="info-title" for="Billing Pincode">Shipping Pincode
-                                                    <span>*</span></label>
-                                                <input type="text" class="form-control unicase-form-control text-input"
-                                                    id="shippingpincode" name="shippingpincode" required="required"
-                                                    value="<?php echo $row['shippingPincode'];?>">
-                                            </div>
-
-
-                                            <button type="submit" name="shipupdate"
-                                                class="btn-upper btn btn-primary checkout-page-button">Update</button>
-                                            <?php } ?>
-
-
+                                        <div class="form-group">
+                                            <label class="info-title" for="Shipping Address">Shipping
+                                                Address<span>*</span></label>
+                                            <textarea class="form-control unicase-form-control text-input"
+                                                name="shippingaddress"
+                                                required="required"><?php echo $row['shippingAddress'];?></textarea>
                                         </div>
 
-                                    </td>
-                                </tr>
-                            </tbody><!-- /tbody -->
-                        </table><!-- /table -->
-                    </div>
-                    <div class="col-md-4 col-sm-12 cart-shopping-total">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>
 
-                                        <div class="cart-grand-total">
-                                            Grand Total<span
-                                                class="inner-left-md"><?php echo $_SESSION['tp']="$totalprice". ".00"; ?></span>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead><!-- /thead -->
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="cart-checkout-btn pull-right">
-                                            <button type="submit" name="ordersubmit" class="btn btn-primary">PROCCED TO
-                                                CHEKOUT</button>
 
+                                        <div class="form-group">
+                                            <label class="info-title" for="Billing State ">Shipping State
+                                                <span>*</span></label>
+                                            <input type="text" class="form-control unicase-form-control text-input"
+                                                id="shippingstate" name="shippingstate"
+                                                value="<?php echo $row['shippingState'];?>" required>
                                         </div>
-                                    </td>
-                                </tr>
-                            </tbody><!-- /tbody -->
-                        </table>
-                        <?php } else {
+                                        <div class="form-group">
+                                            <label class="info-title" for="Billing City">Shipping City
+                                                <span>*</span></label>
+                                            <input type="text" class="form-control unicase-form-control text-input"
+                                                id="shippingcity" name="shippingcity" required="required"
+                                                value="<?php echo $row['shippingCity'];?>">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="info-title" for="Billing Pincode">Shipping Pincode
+                                                <span>*</span></label>
+                                            <input type="text" class="form-control unicase-form-control text-input"
+                                                id="shippingpincode" name="shippingpincode" required="required"
+                                                value="<?php echo $row['shippingPincode'];?>">
+                                        </div>
+
+
+                                        <button type="submit" name="shipupdate"
+                                            class="btn-upper btn btn-primary checkout-page-button">Update</button>
+                                        <?php } ?>
+
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </tbody><!-- /tbody -->
+                    </table><!-- /table -->
+                </div>
+                <div class="col-md-4 col-sm-12 cart-shopping-total">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+
+                                    <div class="cart-grand-total">
+                                        Grand Total<span
+                                            class="inner-left-md"><?php echo $_SESSION['tp']="$totalprice". ".00"; ?></span>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead><!-- /thead -->
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="cart-checkout-btn pull-right">
+                                        <button type="submit" name="ordersubmit" class="btn btn-primary">PROCCED TO
+                                            CHEKOUT</button>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody><!-- /tbody -->
+                    </table>
+                    <?php } else {
 echo "Your shopping Cart is empty";
 		}?>
-                    </div>
                 </div>
             </div>
-            </form>
-            <?php echo include('includes/brands-slider.php');?>
         </div>
+        <?php echo include('includes/brands-slider.php');?>
+    </div>
     </div>
     <?php include('includes/footer.php');?>
 

@@ -71,25 +71,19 @@ if(isset($_POST['submit']))
     <header class="header-style-1">
         <?php include('includes/header.php');?>
     </header>
-
-
     <div class="body-content outer-top-xs">
         <div class='container'>
             <div class='row single-product outer-bottom-sm '>
                 <div class='col-md-3 sidebar'>
                     <div class="sidebar-module-container">
-						<?php include('includes/side-menu.php');?>
-                        <?php include('includes/side-subcategory.php');?>
+                        <?php include('includes/side-menu.php');?>
                     </div>
                 </div><!-- /.sidebar -->
                 <?php 
 $ret=mysqli_query($con,"select * from products where id='$pid'");
 while($row=mysqli_fetch_array($ret))
 {
-
 ?>
-
-
                 <div class='col-md-9'>
                     <div class="row  wow fadeInUp">
                         <div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
@@ -99,9 +93,9 @@ while($row=mysqli_fetch_array($ret))
                                         <a data-lightbox="image-1"
                                             data-title="<?php echo htmlentities($row['productName']);?>"
                                             href="<?php echo htmlentities($row['productImage1']);?>">
-                                            <img class="img-responsive" alt="" src="assets/images/blank.gif"
+                                            <img class="img-responsive" alt="" 
                                                 data-echo="<?php echo htmlentities($row['productImage1']);?>"
-                                                width="370" height="350" />
+                                                width="370" height="370" />
                                         </a>
                                     </div>
                                     <div class="single-product-gallery-item" id="slide1">
@@ -270,7 +264,7 @@ $num=mysqli_num_rows($rt);{ ?>
                                                                         <td><input type="radio" name="rating"
                                                                                 class="radio" value="5"></td>
                                                                     </tr>
-                                                                   
+
                                                                 </tbody>
                                                             </table><!-- /.table .table-bordered -->
                                                         </div><!-- /.table-responsive -->
@@ -306,58 +300,57 @@ $num=mysqli_num_rows($rt);{ ?>
             </div><!-- /.row -->
         </div><!-- /.product-tabs -->
 
-        
-        </div>
+
+    </div>
     <div class="clearfix"></div>
     <?php $cid=$row['category'];
             $subcid=$row['subCategory']; } ?>
-            
-            <section class="section featured-product ">
-                <h3 class="section-title">Realted Products </h3>
-                <div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
-                    <?php 
+
+    <section class="section featured-product ">
+        <h3 class="section-title">Realted Products </h3>
+        <div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
+            <?php 
 $qry=mysqli_query($con,"select * from products where subCategory='$subcid' and category='$cid'");
 while($rw=mysqli_fetch_array($qry)){?>
-                    <div class="item item-carousel">
-                        <div class="products">
-                            <div class="product">
-                                <div class="product-image">
-                                    <div class="image">
-                                        <a href="product-details.php?pid=<?php echo ($rw['id']);?>"><img
-                                                src="<?php echo ($rw['productImage1']);?>" width="180"
-                                                height="240" alt=""></a>
-                                    </div>
-                                </div>
-                                <div class="product-info text-left">
-                                    <h3 class="name"><a
-                                            href="product-details.php?pid=<?php echo ($rw['id']);?>"><?php echo ($rw['productName']);?></a>
-                                    </h3>
-                                    <?php include('includes/rating.php');?>
-                                    <div class="product-price">
-                                        <span class="price">
-                                            Rs.<?php echo ($rw['productPrice']);?> </span>
-                                        <span class="price-before-discount">Rs.
-                                            <?php echo ($rw['productPriceBeforeDiscount']);?></span>
-                                    </div>
-                                </div>
-                                <div class="cart clearfix animate-effect">
-                                    <div class="action">
-                                        <ul class="list-unstyled">
-                                            <li class="add-cart-button btn-group">
-                                                <a href="product-details.php?page=product&action=add&id=<?php echo $rw['id']; ?>"
-                                                    class="lnk btn btn-primary">Add to cart</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+            <div class="item item-carousel">
+                <div class="products">
+                    <div class="product">
+                        <div class="product-image">
+                            <div class="image">
+                                <a href="product-details.php?pid=<?php echo ($rw['id']);?>"><img
+                                        src="<?php echo ($rw['productImage1']);?>" width="180" height="240" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="product-info text-left">
+                            <h3 class="name"><a
+                                    href="product-details.php?pid=<?php echo ($rw['id']);?>"><?php echo ($rw['productName']);?></a>
+                            </h3>
+                            <?php include('includes/rating.php');?>
+                            <div class="product-price">
+                                <span class="price">
+                                    Rs.<?php echo ($rw['productPrice']);?> </span>
+                                <span class="price-before-discount">Rs.
+                                    <?php echo ($rw['productPriceBeforeDiscount']);?></span>
+                            </div>
+                        </div>
+                        <div class="cart clearfix animate-effect">
+                            <div class="action">
+                                <ul class="list-unstyled">
+                                    <li class="add-cart-button btn-group">
+                                        <a href="product-details.php?page=product&action=add&id=<?php echo $rw['id']; ?>"
+                                            class="lnk btn btn-primary">Add to cart</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
                 </div>
-            </section>
-	
-	</div>
+            </div>
+            <?php } ?>
+        </div>
+    </section>
+
+    </div>
     <?php include('includes/brands-slider.php');?>
     </div>
     </div>

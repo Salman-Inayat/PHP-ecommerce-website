@@ -96,7 +96,7 @@ while ($row=mysqli_fetch_array($ret))
                                                         <div class="image">
                                                             <a
                                                                 href="product-details.php?pid=<?php echo ($row['id']);?>"><img
-                                                                    src="<?php echo ($row['productImage1']);?>f"
+                                                                    src="<?php echo ($row['productImage1']);?>"
                                                                     alt="" width="200" height="300"></a>
                                                         </div>
                                                     </div>
@@ -111,8 +111,6 @@ while ($row=mysqli_fetch_array($ret))
                                                             <span class="price">
                                                                 Rs. <?php echo ($row['productPrice']);?>
                                                             </span>
-                                                            <span class="price-before-discount">Rs.
-                                                                <?php echo ($row['productPriceBeforeDiscount']);?></span>
                                                         </div>
                                                     </div>
                                                     <div class="cart clearfix animate-effect">
