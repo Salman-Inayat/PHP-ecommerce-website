@@ -134,16 +134,14 @@ while($row=mysqli_fetch_array($query))
                                         <?php } ?>
                                     </tbody><!-- /tbody -->
                                 </table><!-- /table -->
-
                         </div>
                     </div>
-
                 </div><!-- /.shopping-cart -->
             </div> <!-- /.row -->
             </form>
         </div><!-- /.container -->
-	</div><!-- /.body-content -->
-	
+    </div><!-- /.body-content -->
+
     <?php include('includes/footer.php');?>
 
     <script src="assets/js/jquery-1.11.1.min.js"></script>

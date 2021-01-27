@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+error_reporting(0);
 include('include/config.php');
 if(strlen($_SESSION['alogin'])==0)
 	{	
@@ -50,7 +51,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 							<div class="module-head">
 								<h3>Pending Orders</h3>
 							</div>
-							<div class="module-body table">
+							<div class="module-body ">
 	<?php if(isset($_GET['del']))
 {?>
 									<div class="alert alert-error">
@@ -62,8 +63,7 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 									<br />
 
 							
-								<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display table-responsive" >
-									<thead>
+									<table  class="table table-bordered ">									<thead>
 										<tr>
 											<th>#</th>
 											<th> Name</th>

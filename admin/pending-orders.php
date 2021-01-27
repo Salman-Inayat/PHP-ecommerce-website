@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 include('include/config.php');
 if(strlen($_SESSION['alogin'])==0)
 	{	
@@ -53,7 +54,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                             <div class="module-head">
                                 <h3>Pending Orders</h3>
                             </div>
-                            <div class="module-body table">
+                            <div class="module-body ">
                                 <?php if(isset($_GET['del']))
 {?>
                                 <div class="alert alert-error">
@@ -66,8 +67,7 @@ $currentTime = date( 'd-m-Y h:i:s A', time () );
                                 <br />
 
 
-                                <table cellpadding="0" cellspacing="0" border="0"
-                                    class="datatable-1 table table-bordered table-striped	 display table-responsive">
+                                <table  class="table table-bordered ">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -114,9 +114,6 @@ while($row=mysqli_fetch_array($query))
                                 </table>
                             </div>
                         </div>
-
-
-
                     </div>
                     <!--/.content-->
                 </div>

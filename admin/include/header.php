@@ -1,32 +1,9 @@
-<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-					<i class="icon-reorder shaded"></i>
-				</a>
-
-			  	<a class="brand" href="index.html">
-			  		Shopping Portal | Admin
-			  	</a>
-
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-					<ul class="nav pull-right">
-						<li><a href="#">
-							Admin
-						</a></li>
-						<li class="nav-user dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<img src="images/user.png" class="nav-avatar" />
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="change-password.php">Change Password</a></li>
-								<li class="divider"></li>
-								<li><a href="logout.php">Logout</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div><!-- /.nav-collapse -->
-			</div>
-		</div><!-- /navbar-inner -->
-	</div><!-- /navbar -->
+<div class="navbar navbar-fixed-top" >
+    <div class="navbar-inner" style="background-color: #f44336; color: white">
+        <div class="container" style="display: flex; justify-content: center; align-items: center; height: 60px">
+            <a href="index.php" style="text-decoration: none">
+                <h3 style="color: white; margin-top: 10px">AtecMart Admin Panel</h3>
+            </a>
+        </div>
+    </div><!-- /navbar-inner -->
+</div><!-- /navbar -->

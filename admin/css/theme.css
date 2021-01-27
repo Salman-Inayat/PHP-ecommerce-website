@@ -902,7 +902,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='@topColor', end
 	 
 	margin-right: 10px;
 	 
-	color: #767676;
+	color: white;
 	 -webkit-transition: all .2s ease-in-out;
 -moz-transition: all .2s ease-in-out;
 transition: all .2s ease-in-out;
@@ -925,11 +925,11 @@ transition: all .2s ease-in-out;
 	background: #d74f2a
 }
 .widget-menu>li+li {
-	border-top: 1px solid #555
+	border-top: 1px solid white
 }
 .widget-menu>li>a {
-	background-color: #2d2b32;
-	color: #767676;
+	background-color: #f44336;
+	color: white;
 	-webkit-transition: all .2s ease-in-out;
 -moz-transition: all .2s ease-in-out;
 transition: all .2s ease-in-out;
@@ -947,11 +947,12 @@ transition: all .2s ease-in-out;
 	display: block
 }
 .widget-menu>li>a:hover {
-	background-color: #28262c;
-	color: #fafafa;
+	background-color: white;
+	color: #f44336;
+	border-left: 5px solid #f44336;
 }
 
-.widget-menu>li>a:hover .menu-icon { color:#fff;}
+.widget-menu>li>a:hover .menu-icon { color:#f44336;}
 
 .widget-menu>li ul li {
 	background: #eee;
