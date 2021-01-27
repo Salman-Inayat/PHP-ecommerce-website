@@ -126,7 +126,7 @@ while($row=mysqli_fetch_array($query))
 					<td><?php echo $cnt;?></td>
 					<td class="cart-image">
 						<a class="entry-thumbnail" href="detail.html">
-						    <img src="admin/productimages/<?php echo $row['proid'];?>/<?php echo $row['pimg1'];?>" alt="" width="84" height="146">
+						    <img src="<?php echo $row['pimg1'];?>" alt="" width="84" height="146">
 						</a>
 					</td>
 					<td class="cart-product-name-info">
@@ -135,9 +135,7 @@ while($row=mysqli_fetch_array($query))
 						
 						
 					</td>
-					<td class="cart-product-quantity">
-						<?php echo $qty=$row['qty']; ?>   
-		            </td>
+					<td class="cart-product-quantity"><?php echo $qty=$row['qty']; ?></td>
 					<td class="cart-product-sub-total"><?php echo $price=$row['pprice']; ?>  </td>
 					<td class="cart-product-sub-total"><?php echo $shippcharge=$row['shippingcharge']; ?>  </td>
 					<td class="cart-product-grand-total"><?php echo (($qty*$price)+$shippcharge);?></td>
