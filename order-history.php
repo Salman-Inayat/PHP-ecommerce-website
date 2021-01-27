@@ -128,8 +128,8 @@ while($row=mysqli_fetch_array($query))
 						<?php echo $qty=$row['qty']; ?>   
 		            </td>
 					<td class="cart-product-sub-total"><?php echo $price=$row['pprice']; ?>  </td>
-					<td class="cart-product-sub-total"><?php echo $shippcharge=$row['shippingcharge']; ?>  </td>
-					<!-- <td class="cart-product-grand-total"><?php echo (($qty*$price)+$shippcharge);?></td> -->
+					<!-- <td class="cart-product-sub-total"><?php echo $shippcharge=$row['shippingcharge']; ?>  </td> -->
+					<td class="cart-product-grand-total"><?php echo (($qty*$price)+$shippcharge);?></td>
 					<td class="cart-product-sub-total"><?php echo $row['paym']; ?>  </td>
 					<td class="cart-product-sub-total"><?php echo $row['odate']; ?>  </td>
 					

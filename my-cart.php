@@ -237,7 +237,6 @@ $num=mysqli_num_rows($rt);
                                                         <?php } ?>
                                                     </div>
                                                 </div><!-- /.row -->
-
                                             </td>
                                             <td class="cart-product-quantity">
                                                 <div class="quant-input">
@@ -250,7 +249,6 @@ $num=mysqli_num_rows($rt);
                                                     <input type="text"
                                                         value="<?php echo $_SESSION['cart'][$row['id']]['quantity']; ?>"
                                                         name="quantity[<?php echo $row['id']; ?>]">
-
                                                 </div>
                                             </td>
                                             <td class="cart-product-sub-total"><span
@@ -300,9 +298,6 @@ while($row=mysqli_fetch_array($query))
                                                     name="billingaddress"
                                                     required="required"><?php echo $row['billingAddress'];?></textarea>
                                             </div>
-
-
-
                                             <div class="form-group">
                                                 <label class="info-title" for="Billing State ">Billing State
                                                     <span>*</span></label>
@@ -324,15 +319,11 @@ while($row=mysqli_fetch_array($query))
                                                     id="billingpincode" name="billingpincode" required="required"
                                                     value="<?php echo $row['billingPincode'];?>">
                                             </div>
-
-
                                             <button type="submit" name="update"
                                                 class="btn-upper btn btn-primary checkout-page-button">Update</button>
 
                                             <?php } ?>
-
                                         </div>
-
                                     </td>
                                 </tr>
                             </tbody><!-- /tbody -->

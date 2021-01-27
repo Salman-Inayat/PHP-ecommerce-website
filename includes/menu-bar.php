@@ -16,7 +16,6 @@
                         <ul class="nav navbar-nav">
                             <li class="active dropdown yamm-fw">
                                 <a href="index.php" data-hover="dropdown" class="dropdown-toggle">Home</a>
-
                             </li>
                             <?php $sql=mysqli_query($con,"select id,categoryName  from category limit 6");
 while($row=mysqli_fetch_array($sql))
@@ -29,14 +28,10 @@ while($row=mysqli_fetch_array($sql))
 
                             </li>
                             <?php } ?>
-
-
                         </ul><!-- /.navbar-nav -->
                         <div class="clearfix"></div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

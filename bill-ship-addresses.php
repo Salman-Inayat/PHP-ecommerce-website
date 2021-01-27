@@ -92,17 +92,6 @@ echo "<script>alert('Shipping Address has been updated');</script>";
         <!-- ============================================== NAVBAR : END ============================================== -->
 
     </header>
-    <!-- ============================================== HEADER : END ============================================== -->
-    <div class="breadcrumb">
-        <div class="container">
-            <div class="breadcrumb-inner">
-                <ul class="list-inline list-unstyled">
-                    <li><a href="#">Home</a></li>
-                    <li class='active'>Checkout</li>
-                </ul>
-            </div><!-- /.breadcrumb-inner -->
-        </div><!-- /.container -->
-    </div><!-- /.breadcrumb -->
 
     <div class="body-content outer-top-bd">
         <div class="container">

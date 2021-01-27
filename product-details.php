@@ -90,32 +90,8 @@ if(isset($_POST['submit']))
             <div class='row single-product outer-bottom-sm '>
                 <div class='col-md-3 sidebar'>
                     <div class="sidebar-module-container">
-                        <!-- ==============================================CATEGORY============================================== -->
-                        <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
-                            <h3 class="section-title">Category</h3>
-                            <div class="sidebar-widget-body m-t-10">
-                                <div class="accordion">
-
-                                    <?php $sql=mysqli_query($con,"select id,categoryName  from category");
-while($row=mysqli_fetch_array($sql))
-{
-    ?>
-                                    <div class="accordion-group">
-                                        <div class="accordion-heading">
-                                            <a href="category.php?cid=<?php echo $row['id'];?>"
-                                                class="accordion-toggle collapsed">
-                                                <?php echo $row['categoryName'];?>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ============================================== CATEGORY : END ============================================== -->
-
-
-                        <!-- ============================================== COLOR: END ============================================== -->
+						<?php include('includes/side-menu.php');?>
+                        <?php include('includes/side-subcategory.php');?>
                     </div>
                 </div><!-- /.sidebar -->
                 <?php 
@@ -162,9 +138,7 @@ while($row=mysqli_fetch_array($ret))
                             <div class="product-info">
                                 <h1 class="name"><?php echo htmlentities($row['productName']);?></h1>
                                 <?php $rt=mysqli_query($con,"select * from productreviews where productId='$pid'");
-$num=mysqli_num_rows($rt);
-{
-?>
+$num=mysqli_num_rows($rt);{ ?>
                                 <div class="rating-reviews m-t-20">
                                     <div class="row">
                                         <div class="col-sm-3">
@@ -180,12 +154,12 @@ $num=mysqli_num_rows($rt);
                                 <?php } ?>
                                 <div class="stock-container info-container m-t-10">
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <div class="stock-box">
                                                 <span class="label">Availability :</span>
                                             </div>
                                         </div>
-                                        <div class="col-sm-9">
+                                        <div class="col-sm-8">
                                             <div class="stock-box">
                                                 <span
                                                     class="value"><?php echo htmlentities($row['productAvailability']);?></span>
@@ -198,12 +172,12 @@ $num=mysqli_num_rows($rt);
 
                                 <div class="stock-container info-container m-t-10">
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <div class="stock-box">
                                                 <span class="label">Product Brand :</span>
                                             </div>
                                         </div>
-                                        <div class="col-sm-9">
+                                        <div class="col-sm-8">
                                             <div class="stock-box">
                                                 <span
                                                     class="value"><?php echo htmlentities($row['productCompany']);?></span>
@@ -215,12 +189,12 @@ $num=mysqli_num_rows($rt);
 
                                 <div class="stock-container info-container m-t-10">
                                     <div class="row">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <div class="stock-box">
                                                 <span class="label">Shipping Charge :</span>
                                             </div>
                                         </div>
-                                        <div class="col-sm-9">
+                                        <div class="col-sm-8">
                                             <div class="stock-box">
                                                 <span class="value"><?php if($row['shippingCharge']==0)
 											{
@@ -400,7 +374,10 @@ $num=mysqli_num_rows($rt);
             </div><!-- /.row -->
         </div><!-- /.product-tabs -->
 
-        <?php $cid=$row['category'];
+        
+        </div>
+    <div class="clearfix"></div>
+    <?php $cid=$row['category'];
             $subcid=$row['subCategory']; } ?>
             
             <section class="section featured-product ">
@@ -447,9 +424,8 @@ while($rw=mysqli_fetch_array($qry)){?>
                     <?php } ?>
                 </div>
             </section>
-        </div>
-    <div class="clearfix"></div>
-    </div>
+	
+	</div>
     <?php include('includes/brands-slider.php');?>
     </div>
     </div>
