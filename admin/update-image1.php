@@ -7,7 +7,7 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-	$pid=intval($_GET['id']);// product id
+	$pid=intval($_GET['id']);
     if(isset($_POST['submit']))
     {
         $productname=$_POST['productName'];
@@ -16,9 +16,8 @@ else{
         $_SESSION['msg']="Product Image Updated Successfully !!";
 
     }
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +33,7 @@ else{
         rel='stylesheet'>
     <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
     <script type="text/javascript">
-    bkLib.onDomLoaded(nicEditors.allTextAreas);
+        bkLib.onDomLoaded(nicEditors.allTextAreas);
     </script>
 
     <script>
@@ -60,7 +59,6 @@ else{
 
 <body>
     <?php include('include/header.php');?>
-
     <div class="wrapper">
         <div class="container">
             <div class="row">
@@ -73,7 +71,6 @@ else{
                                 <h3>Update Product Image 1</h3>
                             </div>
                             <div class="module-body">
-
                                 <?php if(isset($_POST['submit']))
 {?>
                                 <div class="alert alert-success">
@@ -82,16 +79,10 @@ else{
                                     <?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
                                 </div>
                                 <?php } ?>
-
-
-
                                 <br />
-
                                 <form class="form-horizontal row-fluid" name="insertproduct" method="post"
                                     enctype="multipart/form-data">
-
                                     <?php 
-
 $query=mysqli_query($con,"select productName,productImage1 from products where id='$pid'");
 $cnt=1;
 while($row=mysqli_fetch_array($query))
@@ -122,42 +113,20 @@ while($row=mysqli_fetch_array($query))
                                     <?php } ?>
                                     <div class="control-group">
                                         <div class="controls">
-                                            <button type="submit" name="submit" class="btn">Update</button>
+                                            <button type="submit" name="submit" class="btn  btn-danger">Update</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-
-
-
-
-
                     </div>
-                    <!--/.content-->
                 </div>
-                <!--/.span9-->
             </div>
         </div>
-        <!--/.container-->
     </div>
-    <!--/.wrapper-->
-
-    <?php include('include/footer.php');?>
 
     <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
-    <script src="scripts/datatables/jquery.dataTables.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.datatable-1').dataTable();
-        $('.dataTables_paginate').addClass("btn-group datatable-pagination");
-        $('.dataTables_paginate > a').wrapInner('<span />');
-        $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
-        $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
-    });
-    </script>
 </body>
 <?php } ?>

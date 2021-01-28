@@ -18,40 +18,14 @@ include('includes/config.php');
     <meta name="robots" content="all">
 
     <title>Order History</title>
+
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/green.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/css/owl.transitions.css">
-    <!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
-    <link href="assets/css/lightbox.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/rateit.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
 
-    <!-- Demo Purpose Only. Should be removed in production -->
-    <link rel="stylesheet" href="assets/css/config.css">
-
-    <link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
-    <link href="assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
-    <link href="assets/css/red.css" rel="alternate stylesheet" title="Red color">
-    <link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
-    <link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
-    <script language="javascript" type="text/javascript">
-    var popUpWin = 0;
-
-    function popUpWindow(URLStr, left, top, width, height) {
-        if (popUpWin) {
-            if (!popUpWin.closed) popUpWin.close();
-        }
-        popUpWin = open(URLStr, 'popUpWin',
-            'toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=yes,width=' +
-            600 + ',height=' + 600 + ',left=' + left + ', top=' + top + ',screenX=' + left + ',screenY=' + top + '');
-    }
-    </script>
 
 </head>
 
@@ -132,15 +106,15 @@ while($row=mysqli_fetch_array($query))
                                             <td colspan="8">Either order id or Registered email id is invalid</td>
                                         </tr>
                                         <?php } ?>
-                                    </tbody><!-- /tbody -->
-                                </table><!-- /table -->
+                                    </tbody>
+                                </table>
                         </div>
                     </div>
-                </div><!-- /.shopping-cart -->
-            </div> <!-- /.row -->
+                </div>
+            </div> 
             </form>
-        </div><!-- /.container -->
-    </div><!-- /.body-content -->
+        </div>
+    </div>
 
     <?php include('includes/footer.php');?>
 

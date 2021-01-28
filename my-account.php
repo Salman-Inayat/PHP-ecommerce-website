@@ -53,55 +53,14 @@ else
     <meta name="robots" content="all">
 
     <title>My Account</title>
-
-    <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-    <!-- Customizable CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/green.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/css/owl.transitions.css">
-    <!--<link rel="stylesheet" href="assets/css/owl.theme.css">-->
-    <link href="assets/css/lightbox.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/rateit.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
 
-    <!-- Demo Purpose Only. Should be removed in production -->
-    <link rel="stylesheet" href="assets/css/config.css">
-
-    <link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
-    <link href="assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
-    <link href="assets/css/red.css" rel="alternate stylesheet" title="Red color">
-    <link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
-    <link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="assets/images/favicon.ico">
-    <script type="text/javascript">
-    function valid() {
-        if (document.chngpwd.cpass.value == "") {
-            alert("Current Password Filed is Empty !!");
-            document.chngpwd.cpass.focus();
-            return false;
-        } else if (document.chngpwd.newpass.value == "") {
-            alert("New Password Filed is Empty !!");
-            document.chngpwd.newpass.focus();
-            return false;
-        } else if (document.chngpwd.cnfpass.value == "") {
-            alert("Confirm Password Filed is Empty !!");
-            document.chngpwd.cnfpass.focus();
-            return false;
-        } else if (document.chngpwd.newpass.value != document.chngpwd.cnfpass.value) {
-            alert("Password and Confirm Password Field do not match  !!");
-            document.chngpwd.cnfpass.focus();
-            return false;
-        }
-        return true;
-    }
-    </script>
-
 </head>
 
 <body class="cnt-home">
@@ -128,11 +87,8 @@ else
                                         </a>
                                     </h4>
                                 </div>
-                                <!-- panel-heading -->
 
                                 <div id="collapseOne" class="panel-collapse collapse in">
-
-                                    <!-- panel-body  -->
                                     <div class="panel-body">
                                         <div class="row">
                                             <h4>Personal info</h4>
@@ -178,41 +134,12 @@ while($row=mysqli_fetch_array($query))
         </div>
     </div>
     <?php include('includes/footer.php');?>
+
     <script src="assets/js/jquery-1.11.1.min.js"></script>
-
     <script src="assets/js/bootstrap.min.js"></script>
-
-    <script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
-
-    <script src="assets/js/echo.min.js"></script>
-    <script src="assets/js/jquery.easing-1.3.min.js"></script>
-    <script src="assets/js/bootstrap-slider.min.js"></script>
-    <script src="assets/js/jquery.rateit.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightbox.min.js"></script>
-    <script src="assets/js/bootstrap-select.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/scripts.js"></script>
 
-    <!-- For demo purposes – can be removed on production -->
-
-    <script src="switchstylesheet/switchstylesheet.js"></script>
-
-    <script>
-    $(document).ready(function() {
-        $(".changecolor").switchstylesheet({
-            seperator: "color"
-        });
-        $('.show-theme-options').click(function() {
-            $(this).parent().toggleClass('open');
-            return false;
-        });
-    });
-
-    $(window).bind("load", function() {
-        $('.show-theme-options').delay(2000).trigger('click');
-    });
-    </script>
 </body>
 
 </html>

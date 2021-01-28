@@ -17,7 +17,8 @@ if(isset($_POST['submit']))
 	$productpricebd=$_POST['productpricebd'];
 	$productdescription=$_POST['productDescription'];
 	$productavailability=$_POST['productAvailability'];
-	$productimage1=$_POST["productimage1"];
+    $productimage1=$_POST["productimage1"];
+    
 	$query=mysqli_query($con,"select max(id) as pid from products");
 	$result=mysqli_fetch_array($query);
 	 $productid=$result['pid']+1;
@@ -70,20 +71,17 @@ if(isset($_POST['submit']))
 
 <body>
     <?php include('include/header.php');?>
-
     <div class="wrapper">
         <div class="container">
             <div class="row">
                 <?php include('include/sidebar.php');?>
                 <div class="span9">
                     <div class="content">
-
                         <div class="module">
                             <div class="module-head">
                                 <h3>Insert Product</h3>
                             </div>
                             <div class="module-body">
-
                                 <?php if(isset($_POST['submit']))
 {?>
                                 <div class="alert alert-success">
@@ -92,8 +90,6 @@ if(isset($_POST['submit']))
                                     <?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?>
                                 </div>
                                 <?php } ?>
-
-
                                 <?php if(isset($_GET['del']))
 {?>
                                 <div class="alert alert-error">
@@ -102,9 +98,6 @@ if(isset($_POST['submit']))
                                     <?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?>
                                 </div>
                                 <?php } ?>
-
-                                <br />
-
                                 <form class="form-horizontal row-fluid" name="insertproduct" method="post"
                                     enctype="multipart/form-data">
 
@@ -117,15 +110,12 @@ if(isset($_POST['submit']))
                                                 <?php $query=mysqli_query($con,"select * from category");
 while($row=mysqli_fetch_array($query))
 {?>
-
                                                 <option value="<?php echo $row['id'];?>">
                                                     <?php echo $row['categoryName'];?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
                                     </div>
-
-
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Sub Category</label>
                                         <div class="controls">
@@ -133,8 +123,6 @@ while($row=mysqli_fetch_array($query))
                                             </select>
                                         </div>
                                     </div>
-
-
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Product Name</label>
                                         <div class="controls">
@@ -142,7 +130,6 @@ while($row=mysqli_fetch_array($query))
                                                 class="span8 tip" required>
                                         </div>
                                     </div>
-
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Product Company</label>
                                         <div class="controls">
@@ -158,7 +145,6 @@ while($row=mysqli_fetch_array($query))
                                                 class="span8 tip" required>
                                         </div>
                                     </div>
-
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Product Price After
                                             Discount(Selling Price)</label>
@@ -167,7 +153,6 @@ while($row=mysqli_fetch_array($query))
                                                 class="span8 tip" required>
                                         </div>
                                     </div>
-
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Product Description</label>
                                         <div class="controls">
@@ -176,9 +161,6 @@ while($row=mysqli_fetch_array($query))
 </textarea>
                                         </div>
                                     </div>
-
-
-
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Product Availability</label>
                                         <div class="controls">
@@ -190,17 +172,6 @@ while($row=mysqli_fetch_array($query))
                                             </select>
                                         </div>
                                     </div>
-
-
-
-                                    <!-- <div class="control-group">
-                                        <label class="control-label" for="basicinput">Product Image1</label>
-                                        <div class="controls">
-                                            <input type="file" name="productimage1" id="productimage1" value=""
-                                                class="span8 tip" required>
-                                        </div>
-                                    </div> -->
-
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Product Image</label>
                                         <div class="controls">
@@ -208,46 +179,22 @@ while($row=mysqli_fetch_array($query))
                                                 class="span8 tip" required>
                                         </div>
                                     </div>
-
-
                                     <div class="control-group">
                                         <div class="controls">
-                                            <button type="submit" name="submit" class="btn">Insert</button>
+                                            <button type="submit" name="submit" class="btn  btn-danger">Insert</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-
-
-
-
-
                     </div>
-                    <!--/.content-->
                 </div>
-                <!--/.span9-->
             </div>
         </div>
-        <!--/.container-->
     </div>
-    <!--/.wrapper-->
-
-    <?php include('include/footer.php');?>
 
     <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
-    <script src="scripts/datatables/jquery.dataTables.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('.datatable-1').dataTable();
-        $('.dataTables_paginate').addClass("btn-group datatable-pagination");
-        $('.dataTables_paginate > a').wrapInner('<span />');
-        $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
-        $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
-    });
-    </script>
 </body>
 <?php } ?>
