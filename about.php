@@ -31,17 +31,19 @@ include('includes/config.php');
         margin: 50px;
     }
 
-    .aboutus_row h2{
+    .aboutus_row h2 {
         margin: 20px;
         letter-spacing: 1px;
         text-transform: uppercase;
     }
-    .aboutus_row
-    h4,.aboutus_button {
+
+    .aboutus_row h4,
+    .aboutus_button {
         margin: 20px;
         letter-spacing: 0.5px;
     }
-    .about-para{
+
+    .about-para {
         margin: 20px;
     }
 
@@ -54,11 +56,13 @@ include('includes/config.php');
         .aboutus_row {
             margin: 20px;
         }
-        .aboutus_row h2{
+
+        .aboutus_row h2 {
             margin: 30px
         }
-        .aboutus_row
-        h4,.aboutus_button {
+
+        .aboutus_row h4,
+        .aboutus_button {
             margin: 10px;
         }
     }
@@ -66,7 +70,7 @@ include('includes/config.php');
 
 <body>
     <header class="header-style-1">
-        <?php include('includes/header.php');?>
+        <?php include('includes/header.php'); ?>
     </header>
     <div class='container'>
         <div class="row aboutus_row">
@@ -110,7 +114,7 @@ include('includes/config.php');
     </div>
     </div>
     <footer>
-        <?php include('includes/footer.php');?>
+        <?php include('includes/footer.php'); ?>
     </footer>
 
     <script src="assets/js/jquery-1.11.1.min.js"></script>

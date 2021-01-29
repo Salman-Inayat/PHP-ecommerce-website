@@ -19,7 +19,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         <title>Admin| Manage Products</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link type="text/css" href="css/theme.css" rel="stylesheet">
+        <link type="text/css" href="css/admin-style.css" rel="stylesheet">
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
     </head>
@@ -40,7 +40,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                     <?php if (isset($_GET['del'])) { ?>
                                         <div class="alert alert-error">
                                             <button type="button" class="close" data-dismiss="alert">×</button>
-                                            <?php echo htmlentities($_SESSION['delmsg']); ?><?php echo htmlentities($_SESSION['delmsg'] = ""); ?>
+                                            <?php echo ($_SESSION['delmsg']); ?><?php echo ($_SESSION['delmsg'] = ""); ?>
                                         </div>
                                     <?php } ?>
                                     <table class="table table-bordered">
@@ -60,11 +60,11 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             while ($row = mysqli_fetch_array($query)) {
                                             ?>
                                                 <tr>
-                                                    <td><?php echo htmlentities($cnt); ?></td>
-                                                    <td><?php echo htmlentities($row['productName']); ?></td>
-                                                    <td><?php echo htmlentities($row['categoryName']); ?></td>
-                                                    <td> <?php echo htmlentities($row['subcategory']); ?></td>
-                                                    <td><?php echo htmlentities($row['productCompany']); ?></td>
+                                                    <td><?php echo ($cnt); ?></td>
+                                                    <td><?php echo ($row['productName']); ?></td>
+                                                    <td><?php echo ($row['categoryName']); ?></td>
+                                                    <td> <?php echo ($row['subcategory']); ?></td>
+                                                    <td><?php echo ($row['productCompany']); ?></td>
                                                     <td>
                                                         <button class="btn btn-primary btn-xs"><a href="edit-products.php?id=<?php echo $row['id'] ?>"><i class="icon-edit" style="color: white"></i></a></button>
                                                         <button class="btn btn-danger btn-xs">

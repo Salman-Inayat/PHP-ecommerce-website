@@ -22,7 +22,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         <title>Admin| Category</title>
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link type="text/css" href="css/theme.css" rel="stylesheet">
+        <link type="text/css" href="css/admin-style.css" rel="stylesheet">
         <link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
         <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
     </head>
@@ -43,7 +43,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                     <?php if (isset($_POST['submit'])) { ?>
                                         <div class="alert alert-success">
                                             <button type="button" class="close" data-dismiss="alert">×</button>
-                                            <?php echo htmlentities($_SESSION['msg']); ?><?php echo htmlentities($_SESSION['msg'] = ""); ?>
+                                            <?php echo ($_SESSION['msg']); ?><?php echo ($_SESSION['msg'] = ""); ?>
                                         </div>
                                     <?php } ?>
                                     <form class="form-horizontal row-fluid" name="Category" method="post">
@@ -55,13 +55,13 @@ if (strlen($_SESSION['alogin']) == 0) {
                                             <div class="control-group">
                                                 <label class="control-label" for="basicinput">Category Name</label>
                                                 <div class="controls">
-                                                    <input type="text" placeholder="Enter category Name" name="category" value="<?php echo  htmlentities($row['categoryName']); ?>" class="span8 tip" required>
+                                                    <input type="text" placeholder="Enter category Name" name="category" value="<?php echo ($row['categoryName']); ?>" class="span8 tip" required>
                                                 </div>
                                             </div>
                                             <div class="control-group">
                                                 <label class="control-label" for="basicinput">Description</label>
                                                 <div class="controls">
-                                                    <textarea class="span8" name="description" rows="5"><?php echo  htmlentities($row['categoryDescription']); ?></textarea>
+                                                    <textarea class="span8" name="description" rows="5"><?php echo ($row['categoryDescription']); ?></textarea>
                                                 </div>
                                             </div>
                                         <?php } ?>

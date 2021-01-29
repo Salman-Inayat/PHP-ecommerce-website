@@ -26,7 +26,7 @@ include('includes/config.php');
 
 <body>
     <header class="header-style-1">
-        <?php include('includes/header.php');?>
+        <?php include('includes/header.php'); ?>
     </header>
     <div class='container' style="margin-top: 50px; margin-bottom: 50px">
         <div class="row">
@@ -63,7 +63,7 @@ include('includes/config.php');
         </div>
     </div>
     <footer>
-        <?php include('includes/footer.php');?>
+        <?php include('includes/footer.php'); ?>
     </footer>
 
     <script src="assets/js/jquery-1.11.1.min.js"></script>

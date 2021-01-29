@@ -21,26 +21,36 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4" style="display: flex; ">
-                    <div class="contact-timing" >
+                    <div class="contact-timing">
                         <div class="module-heading">
                             <h4 class="module-title" style="color: white">Site links</h4>
                         </div>
                         <div class=" module-body outer-top-xs">
                             <ul>
                                 <li style="margin: 20px 0px">
-                                    <a href="#" style="color: white; "><h5 style="font-weight: 400;">Brands</h5></a>
+                                    <a href="#" style="color: white; ">
+                                        <h5 style="font-weight: 400;">Brands</h5>
+                                    </a>
                                 </li>
                                 <li style="margin: 20px 0px">
-                                    <a href="#" style="color: white"><h5 style="font-weight: 400;">Store Locations</h5></a>
+                                    <a href="#" style="color: white">
+                                        <h5 style="font-weight: 400;">Store Locations</h5>
+                                    </a>
                                 </li>
                                 <li style="margin: 20px 0px">
-                                    <a href="#" style="color: white"><h5 style="font-weight: 400;">Categories</h5></a>
+                                    <a href="#" style="color: white">
+                                        <h5 style="font-weight: 400;">Categories</h5>
+                                    </a>
                                 </li>
                                 <li style="margin: 20px 0px">
-                                    <a href="about.php" style="color: white"><h5 style="font-weight: 400;">About Us</h5></a>
+                                    <a href="about.php" style="color: white">
+                                        <h5 style="font-weight: 400;">About Us</h5>
+                                    </a>
                                 </li>
                                 <li style="margin: 20px 0px">
-                                    <a href="privacy.php" style="color: white"><h5 style="font-weight: 400;">Privacy Policy</h5></a>
+                                    <a href="privacy.php" style="color: white">
+                                        <h5 style="font-weight: 400;">Privacy Policy</h5>
+                                    </a>
                                 </li>
                             </ul>
                         </div>

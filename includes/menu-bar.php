@@ -2,8 +2,7 @@
     <div class="container">
         <div class="yamm navbar navbar-default" role="navigation">
             <div class="navbar-header">
-                <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse"
-                    class="navbar-toggle collapsed" type="button">
+                <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -17,18 +16,16 @@
                             <li class="active dropdown yamm-fw">
                                 <a href="index.php" data-hover="dropdown" class="dropdown-toggle">Home</a>
                             </li>
-                            <?php $sql=mysqli_query($con,"select id,categoryName  from category limit 6");
-while($row=mysqli_fetch_array($sql))
-{
-    ?>
+                            <?php $sql = mysqli_query($con, "select id,categoryName  from category limit 6");
+                            while ($row = mysqli_fetch_array($sql)) {
+                            ?>
 
-                            <li class="dropdown yamm">
-                                <a href="category.php?cid=<?php echo $row['id'];?>">
-                                    <?php echo $row['categoryName'];?></a>
-
-                            </li>
+                                <li class="dropdown yamm">
+                                    <a href="category.php?cid=<?php echo $row['id']; ?>">
+                                        <?php echo $row['categoryName']; ?></a>
+                                </li>
                             <?php } ?>
-                        </ul><!-- /.navbar-nav -->
+                        </ul>
                         <div class="clearfix"></div>
                     </div>
                 </div>

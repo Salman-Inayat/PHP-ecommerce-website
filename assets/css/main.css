@@ -3,7 +3,7 @@
   vertical-align: top;
 }
 
-.nav-links{
+.nav-links {
   font-size: 14px;
 }
 .nav-links:hover {
@@ -448,10 +448,10 @@ a {
   color: #666;
 }
 
-.nav-link:hover{
-    color: #f44336;
+.nav-link:hover {
+  color: #f44336;
 }
-.icon-button{
+.icon-button {
   background-color: #f44336;
 }
 .top-cart-row
@@ -2190,7 +2190,6 @@ a {
   position: absolute;
 }
 
-
 /*===================================================================================*/
 /*  OWL CAROUSEL
 /*===================================================================================*/
@@ -2501,14 +2500,9 @@ a {
   bottom: -40px;
   padding: 10px;
   display: inline-block;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
   border-radius: 3px;
   margin: auto;
   opacity: 0;
-  -webkit-transition: all 200ms ease-out;
-  -moz-transition: all 200ms ease-out;
-  -o-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
 #owl-main:hover .owl-pagination {
@@ -2528,8 +2522,6 @@ a {
   height: 15px;
   background: #d3d3d3;
   border: none;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
   margin: 0 5px;
   -webkit-transition: all 200ms ease-out;
@@ -2587,9 +2579,6 @@ a {
 #owl-main .item .caption .excerpt span,
 #owl-main .item .caption .small span {
   background: none repeat scroll 0 0 #bbbbbb;
-  -moz-box-shadow: -1.4em 0 0 #bbbbbb, 1.4em 0 0 #bbbbbb;
-  -webkit-box-shadow: -1.4em 0 0 #bbbbbb, 1.4em 0 0 #bbbbbb;
-  box-shadow: -1.4em 0 0 #bbbbbb, 1.4em 0 0 #bbbbbb;
   line-height: 336%;
   padding: 0.6em 0;
   display: inline;
@@ -2615,8 +2604,6 @@ a {
 #owl-main .item .caption.bg-color .excerpt span,
 #owl-main .item .caption.bg-color .small span {
   background: rgba(0, 0, 0, 0);
-  -moz-box-shadow: none;
-  -webkit-box-shadow: none;
   box-shadow: none;
   display: block;
   line-height: 24px;
@@ -4078,7 +4065,6 @@ a {
   text-align: center;
 }
 
-
 /*===================================================================================*/
 /*  Responsive Web Design media Queries
 /*===================================================================================*/
@@ -4100,9 +4086,15 @@ a {
   .top-bar .header-top-inner .cnt-block .list-inline li {
     margin: 7px 0;
   }
+  .main-header {
+    padding: 0px 0px 10px 0px;
+  }
   .main-header .logo-holder {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+  }
+  .main-header .navbar {
+    margin-bottom: 0px;
   }
   .main-header .top-search-holder .contact-row {
     margin-bottom: 20px;
@@ -4145,7 +4137,7 @@ a {
   }
   .product .product-image .image img {
     width: 100%;
-    height: auto;
+    height: 40vh;
     display: block;
   }
   .header-nav .yamm .dropdown-menu {
@@ -4202,7 +4194,6 @@ a {
     width: auto;
   }
 }
-
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991px) {
@@ -4262,7 +4253,6 @@ a {
   }
 }
 
-
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .main-header .top-search-holder .search-area .control-group {
@@ -4291,7 +4281,6 @@ a {
     width: auto !important;
   }
 }
-
 
 /* Large devices (large desktops, 1200px and up) */
 

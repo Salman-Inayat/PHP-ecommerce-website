@@ -78,195 +78,178 @@ if (isset($_POST['submit'])) {
                 $ret = mysqli_query($con, "select * from products where id='$pid'");
                 while ($row = mysqli_fetch_array($ret)) {
                 ?>
-                <div class='col-md-9'>
-                    <div class="row  wow fadeInUp">
-                        <div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
-                            <div class="product-item-holder size-big single-product-gallery small-gallery">
-                                <div id="owl-single-product">
-                                    <div class="single-product-gallery-item" id="slide1">
-                                        <img class="img-responsive" alt=""
-                                            src="<?php echo htmlentities($row['productImage1']); ?>" width="370"
-                                            height="370" />
+                    <div class='col-md-9'>
+                        <div class="row  wow fadeInUp">
+                            <div class="col-xs-12 col-sm-6 col-md-5 gallery-holder">
+                                <div class="product-item-holder size-big single-product-gallery small-gallery">
+                                    <div id="owl-single-product">
+                                        <div class="single-product-gallery-item" id="slide1">
+                                            <img class="img-responsive" alt="" src="<?php echo ($row['productImage1']); ?>" width="370" height="370" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class='col-sm-6 col-md-7 product-info-block'>
-                            <div class="product-info">
-                                <h1 class="name"><?php echo htmlentities($row['productName']); ?></h1>
-                                <?php $rt = mysqli_query($con, "select * from productreviews where productId='$pid'");
+                            <div class='col-sm-6 col-md-7 product-info-block'>
+                                <div class="product-info">
+                                    <h1 class="name"><?php echo ($row['productName']); ?></h1>
+                                    <?php $rt = mysqli_query($con, "select * from productreviews where productId='$pid'");
                                     $num = mysqli_num_rows($rt); { ?>
-                                <div class="rating-reviews m-t-20">
-                                    <div class="row">
-                                        <?php include('includes/rating.php'); ?>
-                                        <div class="col-sm-8">
-                                            <div class="reviews">
-                                                <a href="#" class="lnk">(<?php echo htmlentities($num); ?> Reviews)</a>
+                                        <div class="rating-reviews m-t-20">
+                                            <div class="row">
+                                                <?php include('includes/rating.php'); ?>
+                                                <div class="col-sm-8">
+                                                    <div class="reviews">
+                                                        <a href="#" class="lnk">(<?php echo ($num); ?> Reviews)</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                    <div class="stock-container info-container m-t-10">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="stock-box">
+                                                    <span class="label">Availability :</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="stock-box">
+                                                    <span class="value"><?php echo ($row['productAvailability']); ?></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <?php } ?>
-                                <div class="stock-container info-container m-t-10">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="stock-box">
-                                                <span class="label">Availability :</span>
+                                    <div class="stock-container info-container m-t-10">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="stock-box">
+                                                    <span class="label">Product Brand :</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="stock-box">
-                                                <span
-                                                    class="value"><?php echo htmlentities($row['productAvailability']); ?></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="stock-container info-container m-t-10">
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="stock-box">
-                                                <span class="label">Product Brand :</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-8">
-                                            <div class="stock-box">
-                                                <span
-                                                    class="value"><?php echo htmlentities($row['productCompany']); ?></span>
+                                            <div class="col-sm-8">
+                                                <div class="stock-box">
+                                                    <span class="value"><?php echo ($row['productCompany']); ?></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="price-container info-container m-t-20">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="price-box">
-                                                <span class="price">Rs.
-                                                    <?php echo htmlentities($row['productPrice']); ?></span>
+                                    <div class="price-container info-container m-t-20">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="price-box">
+                                                    <span class="price">Rs.
+                                                        <?php echo ($row['productPrice']); ?></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="favorite-button m-t-10">
-                                                <a class="btn btn-primary" data-toggle="tooltip" data-placement="right"
-                                                    title="Wishlist"
-                                                    href="product-details.php?pid=<?php echo htmlentities($row['id']) ?>&&action=wishlist">
-                                                    <i class="fa fa-heart"></i>
-                                                </a>
+                                            <div class="col-sm-6">
+                                                <div class="favorite-button m-t-10">
+                                                    <a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Wishlist" href="product-details.php?pid=<?php echo ($row['id']) ?>&&action=wishlist">
+                                                        <i class="fa fa-heart"></i>
+                                                    </a>
 
-                                                </a>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="quantity-container info-container">
-                                    <div class="row">
-                                        <div class="col-sm-7">
-                                            <?php if ($row['productAvailability'] == 'In Stock') { ?>
-                                            <a href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>"
-                                                class="btn btn-primary"><i
-                                                    class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
-                                            <?php } else { ?>
-                                            <div class="action" style="color:red">Out of Stock</div>
-                                            <?php } ?>
+                                    <div class="quantity-container info-container">
+                                        <div class="row">
+                                            <div class="col-sm-7">
+                                                <?php if ($row['productAvailability'] == 'In Stock') { ?>
+                                                    <a href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</a>
+                                                <?php } else { ?>
+                                                    <div class="action" style="color:red">Out of Stock</div>
+                                                <?php } ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product-tabs inner-bottom-xs  wow fadeInUp">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
-                                    <li class="active"><a data-toggle="tab" href="#description">DESCRIPTION</a></li>
-                                    <li><a data-toggle="tab" href="#review">REVIEW</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-9">
-                                <div class="tab-content">
-                                    <div id="description" class="tab-pane in active">
-                                        <div class="product-tab">
-                                            <p class="text"><?php echo $row['productDescription']; ?></p>
+                        <div class="product-tabs inner-bottom-xs  wow fadeInUp">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
+                                        <li class="active"><a data-toggle="tab" href="#description">DESCRIPTION</a></li>
+                                        <li><a data-toggle="tab" href="#review">REVIEW</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="tab-content">
+                                        <div id="description" class="tab-pane in active">
+                                            <div class="product-tab">
+                                                <p class="text"><?php echo $row['productDescription']; ?></p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div id="review" class="tab-pane">
-                                        <div class="product-tab">
-                                            <form role="form" class="cnt-form" name="review" method="post">
-                                                <div class="product-add-review">
-                                                    <h4 class="title">Write your own review</h4>
-                                                    <div class="review-table">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-bordered">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th class="cell-label">&nbsp;</th>
-                                                                        <th>1 star</th>
-                                                                        <th>2 stars</th>
-                                                                        <th>3 stars</th>
-                                                                        <th>4 stars</th>
-                                                                        <th>5 stars</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td class="cell-label">Review</td>
-                                                                        <td><input type="radio" name="rating"
-                                                                                class="radio" value="1"></td>
-                                                                        <td><input type="radio" name="rating"
-                                                                                class="radio" value="2"></td>
-                                                                        <td><input type="radio" name="rating"
-                                                                                class="radio" value="3"></td>
-                                                                        <td><input type="radio" name="rating"
-                                                                                class="radio" value="4"></td>
-                                                                        <td><input type="radio" name="rating"
-                                                                                class="radio" value="5"></td>
-                                                                    </tr>
+                                        <div id="review" class="tab-pane">
+                                            <div class="product-tab">
+                                                <form role="form" class="cnt-form" name="review" method="post">
+                                                    <div class="product-add-review">
+                                                        <h4 class="title">Write your own review</h4>
+                                                        <div class="review-table">
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="cell-label">&nbsp;</th>
+                                                                            <th>1 star</th>
+                                                                            <th>2 stars</th>
+                                                                            <th>3 stars</th>
+                                                                            <th>4 stars</th>
+                                                                            <th>5 stars</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="cell-label">Review</td>
+                                                                            <td><input type="radio" name="rating" class="radio" value="1"></td>
+                                                                            <td><input type="radio" name="rating" class="radio" value="2"></td>
+                                                                            <td><input type="radio" name="rating" class="radio" value="3"></td>
+                                                                            <td><input type="radio" name="rating" class="radio" value="4"></td>
+                                                                            <td><input type="radio" name="rating" class="radio" value="5"></td>
+                                                                        </tr>
 
-                                                                </tbody>
-                                                            </table>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="review-form">
-                                                        <div class="form-container">
-                                                            <div class="row">
-                                                                <div class="col-sm-6">
-                                                                    <div class="form-group">
-                                                                        <label for="exampleInputName">Your Name <span
-                                                                                class="astk">*</span></label>
-                                                                        <input type="text" class="form-control txt"
-                                                                            id="exampleInputName" placeholder=""
-                                                                            name="name" required="required">
+                                                        <div class="review-form">
+                                                            <div class="form-container">
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <div class="form-group">
+                                                                            <label for="exampleInputName">Your Name <span class="astk">*</span></label>
+                                                                            <input type="text" class="form-control txt" id="exampleInputName" placeholder="" name="name" required="required">
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <div class="action text-right">
-                                                                <button name="submit"
-                                                                    class="btn btn-primary btn-upper">SUBMIT
-                                                                    REVIEW</button>
-                                                            </div>
-                                            </form>
+                                                                <div class="action text-right">
+                                                                    <button name="submit" class="btn btn-primary btn-upper">SUBMIT
+                                                                        REVIEW</button>
+                                                                </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
     <div class="clearfix"></div>
 
-    <?php $cid = $row['category'];
+<?php $cid = $row['category'];
                     $subcid = $row['subCategory'];
                 } ?>
 
-    <section class="section featured-product ">
-        <h3 class="section-title">Realted Products </h3>
-        <div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
-            <?php
+<section class="section featured-product container">
+    <h3 class="section-title">Realted Products </h3>
+    <div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs">
+        <?php
         $qry = mysqli_query($con, "select * from products where subCategory='$subcid' and category='$cid'");
         while ($rw = mysqli_fetch_array($qry)) { ?>
             <div class="item item-carousel">
@@ -274,13 +257,11 @@ if (isset($_POST['submit'])) {
                     <div class="product">
                         <div class="product-image">
                             <div class="image">
-                                <a href="product-details.php?pid=<?php echo ($rw['id']); ?>"><img
-                                        src="<?php echo ($rw['productImage1']); ?>" width="180" height="240" alt=""></a>
+                                <a href="product-details.php?pid=<?php echo ($rw['id']); ?>"><img src="<?php echo ($rw['productImage1']); ?>" width="180" height="180" alt=""></a>
                             </div>
                         </div>
                         <div class="product-info text-left">
-                            <h3 class="name"><a
-                                    href="product-details.php?pid=<?php echo ($rw['id']); ?>"><?php echo ($rw['productName']); ?></a>
+                            <h3 class="name"><a href="product-details.php?pid=<?php echo ($rw['id']); ?>"><?php echo ($rw['productName']); ?></a>
                             </h3>
                             <?php include('includes/rating.php'); ?>
                             <div class="product-price">
@@ -294,8 +275,7 @@ if (isset($_POST['submit'])) {
                             <div class="action">
                                 <ul class="list-unstyled">
                                     <li class="add-cart-button btn-group">
-                                        <a href="product-details.php?page=product&action=add&id=<?php echo $rw['id']; ?>"
-                                            class="lnk btn btn-primary">Add to cart</a>
+                                        <a href="product-details.php?page=product&action=add&id=<?php echo $rw['id']; ?>" class="lnk btn btn-primary">Add to cart</a>
                                     </li>
                                 </ul>
                             </div>
@@ -303,19 +283,19 @@ if (isset($_POST['submit'])) {
                     </div>
                 </div>
             </div>
-            <?php } ?>
-        </div>
-    </section>
+        <?php } ?>
+    </div>
+</section>
 
-    </div>
-    </div>
-    </div>
-    <?php include('includes/footer.php'); ?>
+</div>
+</div>
+</div>
+<?php include('includes/footer.php'); ?>
 
-    <script src="assets/js/jquery-1.11.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
